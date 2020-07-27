@@ -10,7 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+<script>
+ // 这是 javascript 注解
+ // 也可以缩写成 $(function() {
+ $(document).ready(function(){
+  $("#my-click").click(function(){
+    $("#foo").html('<h1>zoo</h1>');
+  })
+ })
+</script>
+
+<p>
+  <a id="my-click">Click Me</a>
+</p>
+
+<div id="foo" style="border: 1px solid red;">
+  <p>bar</p>
+</div>
