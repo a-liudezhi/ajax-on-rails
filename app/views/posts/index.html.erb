@@ -13,7 +13,8 @@
 
  <% end %>
  </div>
- <script>
+
+<script>
    // 这会绑 click 事件到所有有 `.delete-post` class 的元素上，也就是所有的删除按钮
      $("#post-list").on('click', ".delete-post", function(evt){
      // `evt` 是浏览器的事件物件，evt.preventDefault(); 会终止这个元素的默认行为：
@@ -32,10 +33,9 @@
               }
        })
    })
+</script>
 
- </script>
- <script>
-
+<script>
    // 记下目前画面最小的贴文 ID
    var current_post_id = <%= @posts.last.id %>;
 
@@ -55,8 +55,9 @@
        }
      }
    })
-   </script>
-   <script>
+</script>
+
+<script>
        $("#post-list").on('change', ".toggle-flag", function(){
     var url = $(this).data("url");
        var that = this;
@@ -74,6 +75,7 @@
     });
   });
 </script>
+
 <script>
    $("#post-list").on('change', ".select_category", function(){
      var url = $(this).data("url");
@@ -90,11 +92,8 @@
      });
    });
 </script>
+
 <script>
-   $(".raty").raty( { path: '/images/' } );
-</script>
-<script>
--   $(".raty").raty( { path: '/images/' } );
    $(".raty").raty({
      path: '/images/',
      score: function() { return $(this).data('score'); },

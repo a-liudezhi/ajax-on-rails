@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-   before_action :authenticate_user!, :only => [:create, :show, :destroy]
+   before_action :authenticate_user!, :except => [:index]
     def index
           @posts = Post.order("id DESC").limit(20)
 
@@ -74,7 +74,7 @@ class PostsController < ApplicationController
 
        render :json => { :average_score => @post.average_score }
      end
-   
+
  protected
 
  def post_params
